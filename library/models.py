@@ -19,6 +19,10 @@ class Author(models.Model):
 
     name = models.TextField()
 
+    def __unicode__(self):
+        """Repr."""
+        return u'{self.name}'.format(self=self)
+
 
 class Book(models.Model):
     """A book you can read, with an author."""
@@ -30,3 +34,7 @@ class Book(models.Model):
     # try adding the following...
     default_manager = ActiveOnly()
     inactive_objects = models.Manager()
+
+    def __unicode__(self):
+        """Repr."""
+        return u'{self.title}: {self.author.name}'.format(self=self)
