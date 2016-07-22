@@ -9,6 +9,7 @@ From within a virtualenv:
 ```console
 pip install -r requirements.txt
 python manage.py migrate
+python manage.py test  # <-- see the issue here
 ```
 
 ### strange relations
